@@ -1,4 +1,10 @@
 /*	Untuk contoh functionnya sebenarnya sama saja dan ini masih procedural
+
+	Void adalah tipe data tapi kosong
+
+        Jika pada int main dsb menggunakan return karena bisa mengembalikan nil>
+<pun atau tipe data kosong.
+
 */
 
 #include <iostream>
@@ -9,6 +15,10 @@ int kuadrat(int x){ //argumen harus selalu memiliki tipe data
 	return hasilKuadrat;
 }
 
+void tampilkan(){
+	cout << "void lohh" << endl;
+}
+
 int main(){
 	int input, hasil;
 	cout << "nilai kuadrat dari: ";
@@ -16,6 +26,8 @@ int main(){
 
 	hasil = kuadrat(input);
 	cout << hasil << endl;
+
+	tampilkan();
 	cin.get();
 	return 0;
 }
