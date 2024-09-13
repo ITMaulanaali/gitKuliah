@@ -15,7 +15,7 @@ int kuadrat(int x){ //argumen harus selalu memiliki tipe data
 	return hasilKuadrat;
 }
 
-void tampilkan() //disebut juga prototype function
+void tampilkan(/*tambahkan jika ada input di function utama*/) //disebut juga prototype function
 
 int main(){
 	int input, hasil;
