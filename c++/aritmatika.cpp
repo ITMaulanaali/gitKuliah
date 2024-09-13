@@ -32,4 +32,4 @@ int main(){
 	return 0;
 }
 
-// Dan modulus hanya bisa untuk operasi pembagian untuk menampilkan atau menyimpal hasil sisa ke variable
+// Dan modulus hanya bisa untuk operasi pembagian untuk menampilkan atau menyimpal hasil sisa ke variable sesuai type data
