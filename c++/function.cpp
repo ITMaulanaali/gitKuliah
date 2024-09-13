@@ -15,9 +15,7 @@ int kuadrat(int x){ //argumen harus selalu memiliki tipe data
 	return hasilKuadrat;
 }
 
-void tampilkan(){
-	cout << "void lohh" << endl;
-}
+void tampilkan() //disebut juga prototype function
 
 int main(){
 	int input, hasil;
@@ -30,4 +28,8 @@ int main(){
 	tampilkan();
 	cin.get();
 	return 0;
+}
+
+void tampilkan(){
+	cout << "dari void" << endl;
 }
