@@ -15,4 +15,8 @@ contoh:
 Ketiga proses tersebut dapat langsung dilakukan menggunakan g++ sourceCode -o newname
 atau bisa di coba satu persatu.
 
+-----------------------------------------------------------------------------
+
+	Library disebut juga pustaka adalah yang diimport masuk ke work area kita.
+Didalam library ini berisi berbagai macam fungsi atau function yang dapat kita gunakan. Nah library inilah yang di Preprocessing agar semua code program didalamnya masuk ke working area kita.
 
