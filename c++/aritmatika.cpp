@@ -1,4 +1,4 @@
-//Operator aritmatika ada 5
+//Operator aritmatika ada 5 operator:
 
 + tambah
 - kurang
