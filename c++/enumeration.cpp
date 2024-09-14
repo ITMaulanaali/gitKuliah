@@ -1,4 +1,4 @@
-/*	Enumeration atau dalam arti, penyebutan satu demi satu. Enumeration sulit untuk Saya jelaskan tapi intinya
+/*	.Enumeration atau dalam arti, penyebutan satu demi satu. Enumeration sulit untuk Saya jelaskan tapi intinya
 Enum ini sangat cocok jika kita membutuhkan daftar kata dengan nilai tetap. Enum ini berindex dari 0 dan jika ditengah di beri angka lain maka nilai tersebut akan terurut tetap sebagai index.
 Karena memang yang dibutuhkan dari enum adalah katanya yang memiliki nilai index.
 */
