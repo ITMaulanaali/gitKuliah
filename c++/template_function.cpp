@@ -17,3 +17,6 @@ int main(){
 	cin.get();
 	return 0;
 }
+
+-----------------------------------------------------------------------
+//bisa juga menggunakan type data auto langsung tapi pelajari lagi ini karena masih belum terlalu paham detail
