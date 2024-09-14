@@ -11,6 +11,7 @@ Break dan Continue biasanya digunakan pada perulangan.
 using namespace std;
 
 int main(){
+	label_continue: //pindah kesini
 	int i = 0;
 	while(i <= 10){
 		if(i== 5){
@@ -19,6 +20,7 @@ int main(){
 		}
 	}
 	cout << "finish" << endl;
+	goto label_continue; //Jika mencapai ini maka alur jalan program akan pindah ke
 	cin.get();
 	return 0;
 }
