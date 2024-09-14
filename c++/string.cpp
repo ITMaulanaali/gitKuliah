@@ -62,3 +62,11 @@ cout << kalimat1.replace(11,4, "telur"); //ini akan merubah kalimat1 menjadi "ak
 string kalimat1 = "aku makan telur";
 
 cout << kalimat1.insert(15,"dadar";
+
+------------------------------------------------------------
+//memasukkan kalimat string yang di input ke variable kalimatInput. Contoh syntaxnya:
+
+string kalimatInput;
+
+getline(cin,kalimatInput);
+cout << kalimatInput << endl;
