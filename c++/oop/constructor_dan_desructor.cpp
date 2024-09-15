@@ -30,6 +30,10 @@ class Mahasiswa{
             Mahasiswa::ipk = ipk;
         }
 
+        ~Mahasiswa(){ //disebut distructor(penghancur). Maksudnya adalah jika start atau mulai inisialisasi object(data object memakai memory) constructor akan di jalankan otomatis. Ketika object selesai dieksekusi(proses program di memory baik stack atau heap hilang) maka distructor secara otomatis dieksekusi. Object memmores datanya di memory hingga selesai berdasarkan awal dan akhir dari statement {}
+            cout << "Eksekusi program di body / statement sudah selesai(end) dan memory di stack sudah hilang" << endl;
+        }
+
 };
 
 int main(){
