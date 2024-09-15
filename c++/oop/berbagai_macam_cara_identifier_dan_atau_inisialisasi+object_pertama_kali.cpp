@@ -37,7 +37,7 @@ int main(){
     object1.show();
 
     //2. cara membuat object dengan constructor
-    DenganConstructor object2 = DenganConstructor("object 2");
+    DenganConstructor object2 = DenganConstructor("object 2"); //data object akan ditaruh di stack memory
     object2.show();
 
     //3. cara lain membuat object dengan constructor
@@ -45,7 +45,7 @@ int main(){
     object3.show();
 
     //4. cara membuat object pada heap memory(tumpukan memory). Semua yang diatas itu di stack memory
-    DenganConstructor* object4 = new DenganConstructor("object 4");
+    DenganConstructor* object4 = new DenganConstructor("object 4"); //object akan ditaruh di memory heap
     (*object4).show(); //dereference dulu objectnya
 
     object4->show(); //arrow operator artinya depanya pointer yang belakang member funtion. salah satu untuk menampoilkan data pointer
