@@ -45,7 +45,7 @@ int main(){
     object3.show();
 
     //4. cara membuat object pada heap memory(tumpukan memory). Semua yang diatas itu di stack memory
-    DenganConstructor* object4 = new DenganConstructor("object 4"); //object akan ditaruh di memory heap
+    DenganConstructor* object4 = new DenganConstructor("object 4"); //object akan ditaruh di memory heap. Data yang masuk ke memory heap tidak akan terhapus secara otomatis ketika statement berakhir atau selesai dijalankan sehingga harus di hapus manual.
     (*object4).show(); //dereference dulu objectnya
 
     object4->show(); //arrow operator artinya depanya pointer yang belakang member funtion. salah satu untuk menampoilkan data pointer
