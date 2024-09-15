@@ -41,7 +41,7 @@ class Mahasiswa{ //class
 
 int main(){
 
-    Mahasiswa lana = Mahasiswa("ucup", 3.9);
+    Mahasiswa lana/*atau: lana("ucup", 3.9)*/ = Mahasiswa("ucup", 3.9);
     lana.tampilkanData();
 
     Mahasiswa ucup = Mahasiswa("lana", 3.7);
