@@ -16,7 +16,7 @@ using namespace std;
 //simulasi class prototype ini terpisah dengan penjabaranya di file lain
 //file kelas_player.h
 
-//ifndef __Player //digunakan jika sudah ada class Player maka akan dihapus dan di define ulang
+//ifndef __Player //digunakan jika sudah ada class Player maka akan dihapus dan di define ulang sehingga tidak terinclude 2 kali atau lebih
 //define __Player
 //#include <string>
 
