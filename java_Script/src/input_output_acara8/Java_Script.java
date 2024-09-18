@@ -1,4 +1,4 @@
-package input_output_acara8;
+package input_output_acara8; //mirip folder sebagai namespace untuk class sehingga compile harus menyertakan package ini yaitu input_output_acara8.Java_Script(nama kelas)
 
 import java.util.Scanner;
 
