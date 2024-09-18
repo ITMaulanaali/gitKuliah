@@ -18,7 +18,7 @@ public class Java_Script {
         bilangan2 = perhitungan.nextByte();
         
         //Ternyata pada pemrograman java script. hasil dari operasi byte dengan byte baik pengurangan atau penjumlahan akan menghasilkan type data int. begitu pula dengan bahasa pemrograman lain seperti c++. Namun di c++ kita bisa lagsung assign type data int itu ke byte tanpa casting(atau pemancingan seperti menggunakan string di program hidroponik). Sedankan di program lain seperti java perlu di casting untuk merubah ke int kemudian di assigne ke hasilBilangan
-        hasilBilangan = bilangan1 + bilangan2;
+        hasilBilangan = (byte) (bilangan1 + bilangan2); //casting. berikan tanda kurung pada operasi agar operasi di jalankan terlebih dahulu kemudian ouputnya(int) adalah kurung itu kemudian di casting.
         System.out.println(hasilBilangan);
         
     }
