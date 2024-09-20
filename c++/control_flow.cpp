@@ -15,8 +15,8 @@ int main(){
 	int i = 0;
 	while(i <= 10){
 		if(i== 5){
-			//continue;
-			//break;
+			//continue; melanjutkan ke iterasi berikutnya(iterasi saat ini di abaikan)
+			//break; (langsung keluar dari loop) atau menghentikan loop ketika di eksekusi
 		}
 	}
 	cout << "finish" << endl;
