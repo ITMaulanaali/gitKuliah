@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.kelasb;
+package PackageExercise;
 import java.util.Scanner;
 /**
  *
