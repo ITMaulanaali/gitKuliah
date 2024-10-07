@@ -17,8 +17,8 @@ perbandingan:
 <,<=,>,>=,==,!=
 
 bitwise operator:
-and,or,xor
-&  ,| ,^	//digunakan untuk operator pada biner sama seperti shift
+and,or,xor not//negasi not
+&  ,| ,^  ,~	//digunakan untuk operator pada biner sama seperti shift
 
 kondisional:
 and, or
