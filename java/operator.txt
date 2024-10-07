@@ -5,7 +5,7 @@ increment/decrement:
 ++ dan -- //biasa digunakan untuk menambahkan satu dan sebaliknya
 
 unary operator:
-+,-,~,!,(cast) //operator yang dapat digunakan pada satu operand saja
++,-,^,!,(cast) //operator yang dapat digunakan pada satu operand saja
 
 perkalian/pembagian/modulus:
 *,/,% //persen adalah modulus atau sisa
