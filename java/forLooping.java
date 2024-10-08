@@ -47,7 +47,16 @@ public class forLooping {
                 }
         
                 System.out.println("ini adalah akhir program");
-        
+                int total = 0;
+                for(int nilaiAwal=0; nilaiAwal <= 10; nilaiAwal++){
+                    
+                    total = total + nilaiAwal;
+                    System.out.println(total);
+                    
+                }
             }
+            
         
 }
+
+
