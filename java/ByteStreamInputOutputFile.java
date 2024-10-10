@@ -54,7 +54,7 @@ public class ByteStreamInputOutputFile {
 
         try (
                 FileInputStream in = new FileInputStream("input.txt");
-                FileOutputStream out = new FileOutputStream("output.txt")
+                FileOutputStream out = new FileOutputStream("output.txt");
                 ){
 
             // Membaca file
