@@ -71,7 +71,7 @@ public class stringOperation {
             System.out.println("tidak sama");
         }
 
-
+        userInput.close();
     }
 
 }

@@ -59,6 +59,5 @@ public class scannerTokenizer {
             System.out.println(stringToken.nextToken());
         }
 
-
     }
 }

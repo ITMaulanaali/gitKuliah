@@ -24,6 +24,6 @@ public class fibonacci {
             f_n_2 = f_n_1;
             f_n_1 = f_n;
         }
-
+        inputUser.close();
     }
 }

@@ -17,6 +17,7 @@ public class ifelseif {
         if(nilai > 70){ //eskpression
             System.out.println("anda lulus");
         }
+        userInput.close();
     }
     
     public static void jikaSalah(){
@@ -29,6 +30,7 @@ public class ifelseif {
         }else{
             System.out.println("maaf anda tidak lulus");
         }
+        userInput.close();
     }
     
     public static void salahJika(){
@@ -43,6 +45,7 @@ public class ifelseif {
         }else{
             System.out.print("kamu tidak lulus nilai dibawah 40");
         }
+        userInput.close();
     }
     
 }

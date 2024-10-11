@@ -22,6 +22,7 @@ public class latihanInputOutputFile {
 
         FileInputStream fileInput = new FileInputStream("PackageExercise/input.txt"); //terdeteksi lokasi di folder java
         System.out.println((char)fileInput.read());
+        fileInput.close();
         
     }
 }

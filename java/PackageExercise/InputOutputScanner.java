@@ -11,5 +11,7 @@ public class InputOutputScanner{ //public class selalu bernama sesuai nama filen
 
 		usia = untukInputData.nextInt();
 		System.out.print("Usia anda adalah: " + usia);
+
+		untukInputData.close();
 	}
 }

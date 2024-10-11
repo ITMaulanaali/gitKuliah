@@ -54,5 +54,6 @@ public class exception {
         }
 
         System.out.println("\nakhir dari program");
+        userInput.close();
     }
 }

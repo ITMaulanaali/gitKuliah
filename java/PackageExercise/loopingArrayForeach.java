@@ -1,7 +1,5 @@
 package PackageExercise;
 
-import java.util.Arrays;
-
 public class loopingArrayForeach {
 
     public static void main(String[] args){
