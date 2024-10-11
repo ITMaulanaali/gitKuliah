@@ -1,20 +1,40 @@
+import java.util.Scanner;
 public class array {
     
     public static void main(String[] args){
 
-        //Inisialisasi array;
-        int[] arrays = {1, 43, 40};
-        arrays[1] = 820;
-        System.out.println(arrays[1]);
-
-        //syntax mirip c++
-        int arrayCpp[] = {1, 40, 80};
-        arrays[1] = 20;
-        System.out.println(arrays[1]);
-
-        //Deklarasi array mirip constructor syntax tapi menggunakan type data
-        String[] arrayString = new String[5]; //harus diberikan argument yang merujuk pada banyaknya koleksi data atau array
-        arrayString[0] = "iya";
-        System.out.println(arrayString[0]);
+        // coutLoopingArrayFor();
+        inputArrayWithScanner();
     }
+
+    public static void coutLoopingArrayFor(){
+        int[] contohArray = {4,3,3,70};
+
+        for(int i=0; i<4; i++){
+            System.out.printf("Menampilan nilai arrary dari index %d nilai: %d\n", i, contohArray[i]);
+        }
+    }
+
+    public static void inputArrayWithScanner(){
+        Scanner inputUser = new Scanner(System.in);
+
+        int[] contohArray = new int[10];
+        int y = 0;
+
+        for(int i = 0; i<contohArray.length; i++){
+            System.out.printf("Masukkan nilai di index %d: ", i);
+            contohArray[i] = inputUser.nextInt();
+            
+            while(i==9){
+                System.out.printf("index %d bernilai: %d\n", y, contohArray[y]);
+                y++;
+                if(y == 10){
+                    break;
+                }
+            }
+        }
+        inputUser.close();
+    }
+
+
 }
