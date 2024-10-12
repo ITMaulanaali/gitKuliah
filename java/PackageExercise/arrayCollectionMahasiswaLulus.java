@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class arrayCollectionMahasiswaLulus {
     public static void main(String[] args){
         // arrayMahasiswaLulus();
-        ganjilGenap();
+        // ganjilGenap();
+        latihanDataMahasiswaDenganArray2d();
     }
 
     public static void arrayMahasiswaLulus(){
@@ -52,5 +53,39 @@ public class arrayCollectionMahasiswaLulus {
             }
         }
         inputUser.close();
+    }
+
+    public static void latihanDataMahasiswaDenganArray2d(){
+        Scanner jumlahMahasiswa = new Scanner(System.in);
+        
+        System.out.print("Masukkan berapa jumlah mahasiswa yang mau di inputkan: ");
+        
+        int b = jumlahMahasiswa.nextInt();
+        int k = 3;
+        String[][] mahasiswa = new String[b][k];
+        
+        for(int baris=0; baris<b; baris++){
+            System.out.println("\n" + "data mahasiswa ke-" + (baris+1) + " adalah:");
+            for(int dataMahasiswa=0; dataMahasiswa<k; dataMahasiswa++){
+                if(dataMahasiswa == 0) System.out.print("NIM: ");
+                else if(dataMahasiswa == 1) System.out.print("Nama: ");
+                else System.out.print("Jurusan: ");
+                System.out.print("");
+                mahasiswa[baris][dataMahasiswa] = jumlahMahasiswa.next();
+            }
+        }
+
+        jumlahMahasiswa.close();
+        
+        System.out.println("Data mahasiswa yang dimasukkan adalah:");
+        System.out.println("=====================================");
+        System.out.println("NIM\t\tNAMA\t\tJURUSAN\t");
+        for(int baris=0; baris<b; baris++){
+            for(int dataMahasiswa=0; dataMahasiswa<k; dataMahasiswa++){
+                System.out.print(mahasiswa[baris][dataMahasiswa]+"\t\t");
+            }
+            
+            System.out.println();
+        }
     }
 }

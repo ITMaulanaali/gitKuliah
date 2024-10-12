@@ -6,7 +6,8 @@ public class array {
         // coutLoopingArrayFor();
         // inputArrayWithScanner();
         // menampilkanForDuaDimensiArray();
-        latihanArray2d();
+         latihanArray2dDenganLenght();
+        
     }
 
     public static void coutLoopingArrayFor(){
@@ -54,7 +55,7 @@ public class array {
         
     }
 
-    public static void latihanArray2d(){
+    public static void latihanArray2dDenganLenght(){
         int[][] array2d = {
             {12,14,34},
             {30,21,67},
@@ -68,5 +69,7 @@ public class array {
             System.out.println();
         }
     }
+
+    
 
 }
