@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class swingOfAwt {
-    public static void main(){
+    public static void main(String[] args){
 
         // gui();
         // membuatFrameBasic();
@@ -22,6 +22,8 @@ public class swingOfAwt {
         
         //by default frame/aplikasi hide sehingga perlu di kondisikan true untuk aktif
         gui.setVisible(true);
+
+        
     }
 
     public static void membuatFrameBasic(){
