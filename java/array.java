@@ -5,7 +5,8 @@ public class array {
 
         // coutLoopingArrayFor();
         // inputArrayWithScanner();
-        menampilkanForDuaDimensiArray();
+        // menampilkanForDuaDimensiArray();
+        latihanArray2d();
     }
 
     public static void coutLoopingArrayFor(){
@@ -51,6 +52,21 @@ public class array {
             System.out.print("\n");
         }
         
+    }
+
+    public static void latihanArray2d(){
+        int[][] array2d = {
+            {12,14,34},
+            {30,21,67},
+            {34,21,50},
+        };
+        
+        for(int baris=0; baris<array2d.length; baris++){ //masuk satu{} sehingga membaca panjang baris(banyaknya baris)
+            for(int kolom=0; kolom<array2d[baris].length; kolom++){ //berada pada blok banyak baris. dotlength membuka blok baris sekali{} dan membaca panjang atau banyak nilai di blok baris(kolom)
+                System.out.print(array2d[baris][kolom] + "  ");
+            }
+            System.out.println();
+        }
     }
 
 }
