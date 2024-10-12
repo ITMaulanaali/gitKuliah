@@ -4,7 +4,8 @@ public class array {
     public static void main(String[] args){
 
         // coutLoopingArrayFor();
-        inputArrayWithScanner();
+        // inputArrayWithScanner();
+        menampilkanForDuaDimensiArray();
     }
 
     public static void coutLoopingArrayFor(){
@@ -36,5 +37,20 @@ public class array {
         inputUser.close();
     }
 
+    public static void menampilkanForDuaDimensiArray(){
+        int[][] angkaArray2 = {
+            {5,4,1,2,5},
+            {9,6,5,7,8},
+            {5,2,1,5,10}
+        };
+        
+        for(int baris=0; baris<3; baris++){
+            for(int kolom=0; kolom<5; kolom++){ //kolom akan diinisialisasi lagi ke 0 untuk perulangan keduakalinya ketika habis;
+                System.out.print(angkaArray2[baris][kolom]);
+            }
+            System.out.print("\n");
+        }
+        
+    }
 
 }
