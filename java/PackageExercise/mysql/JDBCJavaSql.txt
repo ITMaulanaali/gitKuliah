@@ -1,0 +1,14 @@
+DriverManager
+:class untuk mengelola driver
+
+Driver
+:interface untuk management atau mengelola komunikasi dengan database
+
+Connection
+:Interface yang menyediakan method untuk call database
+
+Statement
+:interface untuk mengekseskusi query
+
+ResultSet
+:interface untuk menampung data hasil query
