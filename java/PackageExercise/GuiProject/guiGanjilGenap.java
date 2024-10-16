@@ -1,4 +1,4 @@
-package PackageExercise;
+package PackageExercise.GuiProject;
 
 //kali ini akan membuat gui atau front end menggunakan swing.
 import javax.swing.JFrame;
