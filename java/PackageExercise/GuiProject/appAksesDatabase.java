@@ -11,6 +11,13 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.util.ArrayList; //pahami lagi tentang penggunaan arrayList karena ini tidak jadi kugunakan pada project ini
+
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class projectSqlGui {
     public static void main(String[] args){
@@ -51,7 +58,12 @@ public class projectSqlGui {
         window.add(createButton("find", 220, 270, 80, 20));
         window.add(createButton("delete", 300, 270, 80, 20));
         window.add(createButton("exit", 380, 270, 80, 20));
-        window.add(createTable());
+        
+        Object[] colomDanBaris = mysql(); //pahami lagi tentang object. Ini dapat seolah inheritance dengan memindahkan banyak data dari fungsi lain ke array yang disimpan pada object. Kemudian bisa di assigne ke fungsi lainnya
+        String[] colom = (String[])colomDanBaris[0];
+        String[][] baris = (String[][])colomDanBaris[1];
+        window.add(createTable(colom, baris));
+        
         
         window.setVisible(true);
     }
@@ -108,18 +120,52 @@ public class projectSqlGui {
         return button;
     }
     
-    public static JScrollPane createTable(){
-        String[] colom = {"colom1", "colom2", "colom3","colom4"};
-        String[][] baris = {
-            {"baris1", "baris2", "baris3"},
-            {"baris4", "baris5", "baris6"},
-            {"baris7", "baris8", "baris9"},
-        };
+    public static JScrollPane createTable(String[] colom, String[][] baris){
         DefaultTableModel modelDataTable = new DefaultTableModel(baris, colom);
         JTable table = new JTable(modelDataTable);
         
         JScrollPane scrolling = new JScrollPane(table);
         scrolling.setBounds(60,300,400,100);
         return scrolling;
+    }
+    
+    public static Object[] mysql(){
+        String userName, password, url, query;
+        userName = "admin";
+        password = "ikanikan";
+        url = "jdbc:mysql://localhost:3306/dbperkuliahan";
+        query = "SELECT * FROM tabmahasiswa";
+        
+        String[] colom = {"npm","nama","jurusan","jeniskelamin","alamat"};
+        String[][] baris = new String[100][5];
+        
+        try{
+        Class.forName("com.mysql.cj.jdbc.Driver"); //pahami tentang file .jar yang dibutuhkan untuk membuat driver
+        Connection connect = DriverManager.getConnection(url, userName, password);
+        Statement syntaxSql = connect.createStatement();
+        ResultSet hasil = syntaxSql.executeQuery(query);
+        int i = 0;
+        while(hasil.next()){
+            
+            baris[i][0] = hasil.getString("npm");
+            baris[i][1] = hasil.getString("nama");
+            baris[i][2] = hasil.getString("jurusan");
+            baris[i][3] = hasil.getString("jeniskelamin");
+            baris[i][4] = hasil.getString("alamat");
+            System.out.println("Data: " + baris[i][1]);
+            i++;
+        }
+        connect.close();
+        syntaxSql.close();
+        hasil.close();
+        }catch(SQLException e){
+            System.out.printf("error %s",e);
+        }catch(ClassNotFoundException e){
+            System.out.printf("error %s",e);
+        }
+        
+        Object[] barisDanColom = {colom,baris};
+        return barisDanColom;
+        
     }
 }
