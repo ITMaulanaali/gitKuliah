@@ -8,3 +8,9 @@ CREATE TABLE nama_tabel (
 
 --melihat semua table yang telah dibuat
 SHOW TABLES;
+
+--melihat semua kolom dan DDLnya/spesifikasi kolomnya
+desc tabmahasiswa
+
+--mengambil(get) atau menampilkan semua data di kolom tabel
+SELECT * FROM tabel
