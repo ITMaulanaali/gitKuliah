@@ -6,6 +6,14 @@ CREATE TABLE nama_tabel (
     alamat TEXT
 ) ENGINE = InnoDB;
 
+--mengubah suatu table
+ALTER TABLE nama_tabel
+	ADD COLUMN nama_kolom TEXT,
+	DROP COLUMN nama_kolom,
+	RENAME COLUMN nama_kolom_saat_ini TO nama_kolom_baru,
+	MODIFY nama_kolom VARCHAR(100) AFTER nama_kolom_beforenya,
+	MODIFY nama_kolom VARCHAR(100) FIRST;
+
 --melihat semua table yang telah dibuat
 SHOW TABLES;
 
