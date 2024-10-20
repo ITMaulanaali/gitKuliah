@@ -4,7 +4,7 @@ CREATE TABLE nama_tabel (
     nama VARCHAR(100),
     umur INT,
     alamat TEXT
-);
+) ENGINE = InnoDB;
 
 --melihat semua table yang telah dibuat
 SHOW TABLES;
