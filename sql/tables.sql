@@ -17,6 +17,9 @@ ALTER TABLE nama_tabel
 --melihat semua table yang telah dibuat
 SHOW TABLES;
 
+--melihat query untuk membuat tabel yang mirip seperti ini
+SHOW CREATE TABLE nama_table
+
 --melihat semua kolom dan DDLnya/spesifikasi kolomnya
 desc tabmahasiswa
 
