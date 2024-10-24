@@ -19,6 +19,19 @@ CREATE DATABASE databasename;
 --menghapus satu database dengan mengdrop / menjatuhkan:
 DROP DATABASE databasename;
 
+
+
+
+
+--Tambahan perilaku setelah pengetikan type data
+NOT NULL --data di kolom tersebut tidak boleh kosong
+UNSIGNED --data di kolom tersebut tidak minus (-) (hanya untuk type data angka)
+
+
+
+
+  
+  
 --Contoh dasar membuat table
 CREATE TABLE nama_table1(
   id INT AUTO_INCREMENT PRIMARY KEY,
