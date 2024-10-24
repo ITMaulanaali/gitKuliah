@@ -1,14 +1,7 @@
--- Membuat table disini artinya mengcreate database baru. Syntaxnya:
-CREATE DATABASE databasename;
-
+--Query tambahan untuk bantuan menggunakan mysql
 
 -- Cek semua databasenya apakah ada databasename yang muncul dengan syntax:
 SHOW DATABASES;
-
-
--- Syntax untuk menghapus satu database dengan mengdrop / menjatuhkan:
-DROP DATABASE databasename;
-
 
 --Syntax untuk melakukan backup database
 --		//user	/pass	/database   /table	//membuat file yang menyimpan backup
