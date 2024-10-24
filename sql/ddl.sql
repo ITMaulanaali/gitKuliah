@@ -4,3 +4,8 @@
 --DROP
 --ALTER
 
+--Membuat table atau mengcreate database baru
+CREATE DATABASE databasename;
+
+--menghapus satu database dengan mengdrop / menjatuhkan:
+DROP DATABASE databasename;
