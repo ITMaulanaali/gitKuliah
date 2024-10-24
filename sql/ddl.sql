@@ -4,14 +4,21 @@
 --DROP
 --ALTER
 
---Behavior atau prilaku atau aturan pada reference foreign key
---CASCADE. Ini mengizinkan kolom fk di table. Untuk ikut termanage/ubah/update jika tabel REFERENCES di tabel lain(primary key) di hapus atau diubah.
---SET NULL. Mengizinkan table dengan kolom foreign key untuk meng set null data di kolom fk nya jika referensinya (kolom primary key di tabel lain) di update/hapus
---SET DEFAULT. Mengizinkan table dengan kolom foreign key untuk meng set default nilai di kolomnya jika referensinya (kolom primary key di tabel lain) di update/hapus
---RESTRICT. tidak Mengizinkan update/hapus nilai di kolomnreferensinya (kolom primary key di tabel lain yang dijadikan reference) jika masih ada atau ada referensi ke data di kolom tersebut
---NO ACTION. 
+--JENIS - JENIS CONSTRAINT
+  FOREIGN KEY
+  --Behavior atau prilaku atau aturan pada reference foreign key
+  --CASCADE. Ini mengizinkan kolom fk di table. Untuk ikut termanage/ubah/update jika tabel REFERENCES di tabel lain(primary key) di hapus atau diubah.
+  --SET NULL. Mengizinkan table dengan kolom foreign key untuk meng set null data di kolom fk nya jika referensinya (kolom primary key di tabel lain) di update/hapus
+  --SET DEFAULT. Mengizinkan table dengan kolom foreign key untuk meng set default nilai di kolomnya jika referensinya (kolom primary key di tabel lain) di update/hapus
+  --RESTRICT. tidak Mengizinkan update/hapus nilai di kolomnreferensinya (kolom primary key di tabel lain yang dijadikan reference) jika masih ada atau ada referensi ke data di kolom tersebut
+  --NO ACTION. 
+  --Aturan dasar dalam membuat reference adalah type data harus benar-benar sama seperti unsigned pun harus sama perilakunya
 
---Aturan dasar dalam membuat reference adalah type data harus benar-benar sama seperti unsigned pun harus sama perilakunya
+  UNIQUE
+  
+  --Tambahan perilaku setelah pengetikan type data
+  NOT NULL --data di kolom tersebut tidak boleh kosong
+  UNSIGNED --data di kolom tersebut tidak minus (-) (hanya untuk type data angka)
 
 --Membuat table atau mengcreate database baru
 CREATE DATABASE databasename;
@@ -21,16 +28,6 @@ DROP DATABASE databasename;
 
 
 
-
-
---Tambahan perilaku setelah pengetikan type data
-NOT NULL --data di kolom tersebut tidak boleh kosong
-UNSIGNED --data di kolom tersebut tidak minus (-) (hanya untuk type data angka)
-
-
-
-
-  
   
 --Contoh dasar membuat table
 CREATE TABLE nama_table1(
