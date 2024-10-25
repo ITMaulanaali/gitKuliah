@@ -4,6 +4,9 @@
 
 ::melakukan cek user password wifi
 netsh wlan show profile Reno key=clear
+
+::melakukan pencarian paket yang terinstall yang memiliki kata Desktop
+winget list | findstr "Desktop"
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 :: INSTALLASI PACKAGE
 
