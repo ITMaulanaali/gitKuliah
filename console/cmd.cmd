@@ -25,5 +25,8 @@ winget install Ookla.Speedtest.CLI
 ::menginstall vscode
 winget install Microsoft.VisualStudioCode
 
+::menginstal git
+winget install Git.Git
+
 ::mendownload aplikasi winbox
 winget install MikroTik.Winbox
