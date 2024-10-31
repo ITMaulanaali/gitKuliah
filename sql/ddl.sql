@@ -56,10 +56,20 @@ CREATE TABLE nama_table2(
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- MELAKUKAN UPDATE PADA TABLE
 
+-- Menambahkan kolom baru pada table yang ditimpa / alter
+ALTER TABLE nama_table
+  ADD nama_kolom VARCHAR(10)
+
+-- Menghapus suatu kolom pada table yang ditimpa / alter
+ALTER TABLE nama_table
+  DROP column nama_kolom
+
 -- Menambahkan PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
 ALTER TABLE nama_table
-  ADD PRIMARY KEY (nama_kolom_yang_ditambahkan_primay_key);
+  ADD CONSTRAINT pk_kolom --untuk constraint opsional
+  PRIMARY KEY (nama_kolom_yang_ditambahkan_primay_key);
 
+-- Menambaha Foreign Key di kolon pada table yang di timpa / alter
 ALTER TABLE nama_table_mahasiswa)
   ADD CONSTRAINT nama_fk_ke_rujukan(dosen)_dengan_constraint_ini_maka_relasi_namaKolom_foreignKey_yang_ada_di_mahasiswa_nilainya_harus_sama_atau_ada_di_kolom_rujukan(dosen)_tidak_boleh_beda(unik) --nama constaint opsional
   FOREIGN KEY (nama_kolom_yang_ingin_dibuat_fk_di_table_ini(mahasiswa))
