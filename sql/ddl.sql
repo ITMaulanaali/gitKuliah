@@ -63,5 +63,6 @@ ALTER TABLE nama_table
 ALTER TABLE nama_table_mahasiswa)
   ADD CONSTRAINT nama_fk_ke_rujukan(dosen)_dengan_constraint_ini_maka_relasi_namaKolom_foreignKey_yang_ada_di_mahasiswa_nilainya_harus_sama_atau_ada_di_kolom_rujukan(dosen)_tidak_boleh_beda(unik) --nama constaint opsional
   FOREIGN KEY (nama_kolom_yang_ingin_dibuat_fk_di_table_ini(mahasiswa))
-  REFERENCES nama_table_yang_dirujuk(dosen) (nama_kolom_primary_key_table_itu_yang_dirujuk));
+  REFERENCES nama_table_yang_dirujuk(dosen) (nama_kolom_primary_key_table_itu_yang_dirujuk)
+  ON DELETE RESTRICT ON UPDATE RESTRICT);
 
