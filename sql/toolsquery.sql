@@ -1,11 +1,8 @@
---Query tambahan untuk bantuan menggunakan mysql
-
--- Cek semua databasenya apakah ada databasename yang muncul dengan syntax:
-SHOW DATABASES;
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- PENGELOLAAN ACCOUNT DATABASE MYSQL
 
 --Syntax untuk melakukan backup database
 --		//user	/pass	/database   /table	//membuat file yang menyimpan backup
-sudo mysqldump -u admin -p dbperkuliahan tabmahasiswa -r /home/lan/database.sql;
+sudo mysqldump -u admin -p nama_database nama_table -r /home/lan/nama_backup_database(nama_database_ini_yang_berisi_nama_table_ini).sql;
 
---Masuk ke database untuk mulai management table
-USE databasename;
+
