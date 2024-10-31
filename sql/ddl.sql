@@ -52,3 +52,12 @@ CREATE TABLE nama_table2(
   fk_nama_table1 INT,
   CONSTRAINT fk_to_nama_table1 FOREIGN KEY(fk_nama_table1) REFERENCES nama_table(id) ON DELETE CASCADE ON UPDATE CASCADE 
   ) ENGINE = InnoDB;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- MELAKUKAN UPDATE PADA TABLE
+
+-- Menambahkan PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
+ALTER TABLE nama_table
+  ADD PRIMARY KEY (nama_kolom_yang_ditambahkan_primay_key);
+
+
