@@ -54,7 +54,7 @@ CREATE TABLE nama_table2(
   ) ENGINE = InnoDB;
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- MELAKUKAN UPDATE PADA TABLE
+-- MELAKUKAN UPDATE PADA KOLOM DARI TABLE
 
 -- Menambahkan kolom baru pada table yang ditimpa / alter
 ALTER TABLE nama_table
@@ -63,6 +63,13 @@ ALTER TABLE nama_table
 -- Menghapus suatu kolom pada table yang ditimpa / alter
 ALTER TABLE nama_table
   DROP column nama_kolom
+
+-- Merubah nama table
+RENAME TABLE nama_table_lama TO nama_table_baru;
+
+-- Merubah object(kolom) perubahan ini tidak terbatas pada nama tapi bisa type data dari table yang di alter
+ALTER TABLE nama_table
+  CHANGE nama_kolom_lama nama_kolom_baru VARCHAR(100);
 
 -- Menambahkan PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
 ALTER TABLE nama_table
@@ -76,3 +83,14 @@ ALTER TABLE nama_table_mahasiswa)
   REFERENCES nama_table_yang_dirujuk(dosen) (nama_kolom_primary_key_table_itu_yang_dirujuk)
   ON DELETE RESTRICT ON UPDATE RESTRICT);
 
+-- menghapus semua baris atau data yang ada di table (konsep dari TRUNCATE sebenarnya menghapus seluruh table dan membuatya lagi. Ini menyebabkan reset ulang) Untuk perintah turncate tidak akan dimasukan ke log sehingga perubahan dengan truncate(hapus) tidak akan bisa dikembalikan lagi. Namun bila ia meiliki reference yang diset RESTRICT tentu ini error
+TRUNCATE TABLE nama_table;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- MELAKUKAN UPDATE PADA TABLE
+
+-- Menghapus sebuah table
+DROP TABLE nama_table;
+
+-- Menghapus sebuah database
+DROP DATABASE nama_database;
