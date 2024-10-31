@@ -13,6 +13,8 @@
   --RESTRICT. tidak Mengizinkan update/hapus nilai di kolomnreferensinya (kolom primary key di tabel lain yang dijadikan reference) jika masih ada atau ada referensi ke data di kolom tersebut
   --NO ACTION. 
   --Aturan dasar dalam membuat reference adalah type data harus benar-benar sama seperti unsigned pun harus sama perilakunya
+  PRIMARY KEY
+    
 
   UNIQUE
   
