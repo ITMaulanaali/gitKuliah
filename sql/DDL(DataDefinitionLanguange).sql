@@ -22,12 +22,6 @@
   NOT NULL --data di kolom tersebut tidak boleh kosong
   UNSIGNED --data di kolom tersebut tidak minus (-) (hanya untuk type data angka)
 
---Membuat table atau mengcreate database baru
-CREATE DATABASE databasename;
-
---menghapus satu database dengan mengdrop / menjatuhkan:
-DROP DATABASE databasename;
-
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
@@ -88,6 +82,12 @@ TRUNCATE TABLE nama_table;
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- MELAKUKAN UPDATE PADA TABLE
+
+--Membuat table atau mengcreate database baru
+CREATE DATABASE databasename;
+
+--menghapus satu database dengan mengdrop / menjatuhkan:
+DROP DATABASE databasename;
 
 -- Menghapus sebuah table
 DROP TABLE nama_table;
