@@ -1,0 +1,4 @@
+--Untuk mengelola Transaksi dalam database. Ada 3:
+--COMMIT
+--ROLLBACK
+--SAVEPOINT
