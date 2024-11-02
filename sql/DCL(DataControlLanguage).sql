@@ -1,0 +1,3 @@
+--Untuk mengontrol akses ke data di database. Ada 2:
+--GRANT
+--REVOKE
