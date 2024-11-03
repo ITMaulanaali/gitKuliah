@@ -76,7 +76,7 @@ TRUNCATE TABLE nama_table;
 -- Menambahkan PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
 ALTER TABLE nama_table
   ADD CONSTRAINT pk_kolom --untuk constraint opsional
-  PRIMARY KEY (nama_kolom_yang_ditambahkan_primay_key);
+  PRIMARY KEY (nama_kolom_yang_ditambahkan_primay_key); --bisa menambah primary key di multiple colom dengan , nama_kolom
 
 -- Menambaha Foreign Key di kolon pada table yang di timpa / alter
 ALTER TABLE nama_table_mahasiswa)
