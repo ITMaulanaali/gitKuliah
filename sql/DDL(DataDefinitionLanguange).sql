@@ -103,9 +103,9 @@ ALTER TABLE nama_table
 ALTER TABLE nama_table
   MODIFY nama_kolom VARCHAR(200) FIRST;
 
--- Menambahkan aturan NOT NULL pada kolom
+-- Menambahkan aturan NOT NULL pada kolom dan AUTO_INCREMENT
 ALTER TABLE nama_table
-  MODIFY nama_kolom type_dataNya NOT NULL;
+  MODIFY nama_kolom int AUTO_INCREMENT NOT NULL;
 
 -- Menambahkan colom di table dengan type data waktu / timestamp yang tidak boleh kosong dan default datanya adalah waktu saat baris data dibuat
 ALTER TABLE nama_table
