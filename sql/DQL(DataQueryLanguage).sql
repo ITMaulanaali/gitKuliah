@@ -85,8 +85,9 @@ SELECT DISTINCT nama_kolom_id FROM nama_table WHERE nama_kolom_umur = 15;
 -- Menampilkan semua baris data disemua kolom dimana hanya menampilakan data di baris yang memiliki kolom nama_kolom_umur bernilai >=17 dan nama_kolom_umur ditampilkan secara urut dari 1 - 17 serta memiliki kolom nama_kolom_nama dan diurutkan dari z - 1
 SELECT * FROM nama_table WHERE nama_kolom_umur >=17 ORDER BY nama_kolom_umur ASC, nama_kolom_nama DESC;
 
--- Menampilkan semua baris data di kolom dimana baris tersebut memiliki kolom nama_kolom_orang_pertama dengan nilai yang memiliki kata 'aku'
+-- Menampilkan semua baris data di kolom dimana baris tersebut memiliki kolom nama_kolom_orang_pertama dengan nilai yang memiliki kata 'aku' atau kebalikannya
 SELECT * FROM nama_table WHERE nama_kolom_orang_pertama LIKE '%aku%';
+SELECT * FROM nama_table WHERE nama_kolom_orang_pertama NOT LIKE '%aku%';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --BETWEEN dan ALIASES OPERATOR
