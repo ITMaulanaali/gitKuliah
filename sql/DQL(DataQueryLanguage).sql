@@ -7,8 +7,13 @@
     --tampilkan data apapun yang memiliki a dipaling depan dan u di akhir 'a%b'
     --tampilkan data apapun yang memiliki a didepan dan setidaknya ada 2 karakter di belakang 'a_%'
     --tampilkan data apapun yang memiliki a didepan dan setidaknya ada 3 karakter di belakang 'a_%'
--- IN dan NOT IN
--- AND OR NOT
+
+-- ARITHMETIC OPERATOR
+    -- % atau MOD    untuk hasil pembagian sisa / modulo
+    -- + - * /       Aritmatika biasa
+    -- +             Menambahkan positif atau negatif didepan untuk hasil nilai positif atau negatif juga
+    -- DIV           Integer DIVISION untuk membagi angka numerik dan hasilnya selalu integer
+    
 
 --AGGREGAT fungsi
     --COUNT(*)
@@ -17,8 +22,10 @@
     --MIN(kolom)
     --AVG(kolom)
 
+-- IN dan NOT IN
+-- AND OR NOT
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- MENGAKSES DATABASE
 
 -- Melihat engines di sql
@@ -30,6 +37,7 @@ SHOW DATABASES;
 -- Masuk ke database untuk mulai management table
 USE databasename; --bukan termasuk DQL
 
+SELECT LAST_INSERT_ID(); untuk cek id terkahir yang telah di auto increment
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --MENGAKSES TABLE
 
@@ -52,7 +60,7 @@ SELECT * FROM nama_table;
 SELECT nama_kolom FROM nama_table;
 
 -- Menempilkan semua baris data di semua kolom yang mana hanya menampilkan baris yang ada atau hanya memiliki nilai/data 17 di kolom nama_kolom_umur
-SELECT * FROM nama_table WHERE nama_kolom_umur = 17; --menampilkan semua blok baris yang hanya baris dengan kolom nama_kolom_umur nya memiliki nilai 7
+SELECT * FROM nama_table WHERE nama_kolom_umur = 17 ; --menampilkan semua blok baris yang hanya baris dengan kolom nama_kolom_umur nya memiliki nilai 7
 SELECT * FROM nama_table WHERE nama_kolom_umur >=17; --menampilkan semua baris data dengan kolom nama_kolom_umurnya >=17
 SELECT * FROM nama_table WHERE nama_kolom_nama = 'ucik'; --menampilkan semua baris data dengan kolom nama_kolom_nama nya adalah ucik
 
@@ -62,14 +70,30 @@ SELECT nama_kolom_nama FROM nama_table WHERE nama_kolom_umur >= 17 AND nama_kolo
 -- Menampilkan semua baris di semua kolom dari nama_table yang mana di baris tersebut memiliki nama_kolom_tinggi_wanita dengan nilai 140 atau nama_kolom_jenis_kelamin dengan nilai wanita
 SELECT * FROM nama_table WHERE nama_kolom_tinggi_wanita = 140 OR nama_kolom_jenis_kelamin = 'wanita';
 
--- Menampilkan semua baris data disemua kolom dimana hanya menampilkan data di baris yang yang kolom nama_kolom_umur bernilai null atau data null
+-- Menampilkan semua baris data disemua kolom dimana hanya menampilkan data di baris yang yang kolom nama_kolom_umur bernilai null atau data null atau sebaliknya
 SELECT * FROM nama_table WHERE nama_kolom_umur IS NULL;
+SELECT * FROM nama_table WHERE nama_kolom_umur IS NOT NULL;
 
 -- Menampilkan semua baris di semua kolom tapi yang di kolom nama_kolom_umur nya tidak memiliki nilai 15 atau tidak sama dengan 15
 SELECT * FROM nama_table WHERE nama_kolom_umur <> 20;
 SELECT * FROM nama_table WHERE NOT nama_kolom_umur = 20;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--IN OPERATOR
+--Mirip seperti WHERE dengan OR
+
+--Menampilkan semua baris data di semua kolom pada baris yang memiliki kolom nama_kolom_jenis_makanan tahu / tempe / nasi ataupun sebaliknya(NOT)
+SELECT * FROM nama_table WHERE nama_kolom_jenis_makanan IN ('tahu','tempe','nasi');
+SELECT * FROM nama_table WHERE nama_kolom_jenis_makanan NOT IN ('tahu','tempe','nasi');
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--LIMIT OPERATOR
+
+-- Menampilkan tidak semua baris data di semua kolom atau ada limitasi banyaknya baris yang ditampilkan dan pembatasan dimulai dari baris ke berapa
+SELECT * FROM nama_table WHERE nama_kolom = 12 ORDER BY nama_kolom ASC LIMIT 2; --memunculkan hanya 2 baris dimulai dari baris yang memiliki kolom nama_kolom dengan nilai dari 1 - 9
+SELECT * FROM nama_table WHERE nama_kolom = 12 ORDER BY nama_kolom ASC LIMIT 5,2; --memunculkan hanya 2 baris dimulai dari baris ke 5 dari nama_kolom 1-9 sehingga yang muncul baris 6 dan 7
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --SELECT DISTINCT
 
 -- Menampilkan hanya baris data yang unik(bila duplikat hanya tampilkan 1, jika tidak duplikat maka tampilkan satu data itu(unik)) jika duplikat di semua kolom namun hanya menampilkan nilai data yang bila itu duplikat hanya ditampilkan satu saja untuk baris yang memiliki kolom nama_kolom_umur 15
@@ -97,6 +121,14 @@ SELECT * FROM nama_table WHERE nama_kolom_umur BETWEEN 17 AND 20;
 
 -- Menampilkan semua baris data di kolom nama_kolom1 dan nama_kolom2 dengan nama alias
 SELECT nama_kolom1 AS alias_nama_kolom1, nama_kolom2 AS alias_nama_kolom2 FROM nama_table;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- DATE and TIME FUNCTION
+
+-- Menampilkan semua baris data hanya di kolom id dan bulan dan tahun saja. Kolom bulan dan tahun diambil dari kolom dengan type data timestamp atau datetime
+SELECT nama_kolom_id, MONTH(nama_kolom_timestamp) AS 'ini_kolom_bulan' FROM nama_table; --atau
+SELECT nama_kolom_id, YEAR(nama_kolom_timestamp) FROM nama_table;
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- GROUP BY (biasanya dikombinasikan dengan aggregat)
