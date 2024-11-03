@@ -21,8 +21,20 @@
   --Tambahan perilaku setelah pengetikan type data
   NOT NULL --data di kolom tersebut tidak boleh kosong
   UNSIGNED --data di kolom tersebut tidak minus (-) (hanya untuk type data angka)
+  DEFAULT  --data di kolom tersebut memiliki nilai default bila tidak di isi
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Melakukan DDL Database
+
+--Membuat table atau mengcreate database baru
+CREATE DATABASE databasename;
+
+--menghapus satu database dengan mengdrop / menjatuhkan:
+DROP DATABASE databasename;
+
+-- Menghapus sebuah database
+DROP DATABASE nama_database;
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
 --Contoh dasar membuat table
@@ -31,7 +43,7 @@ CREATE TABLE nama_table1(
   nama VARCHAR(20) NOT NULL,
   umur INT UNSIGNED,
   golongan VARCHAR(2),
-  jurusan VARCHAR(10) NOT NULL,
+  jurusan VARCHAR(10) NOT NULL DEFAULT 'it',
   alamat TEXT
   ) ENGINE = InnoDB;
 
@@ -47,23 +59,19 @@ CREATE TABLE nama_table2(
   CONSTRAINT fk_to_nama_table1 FOREIGN KEY(fk_nama_table1) REFERENCES nama_table(id) ON DELETE CASCADE ON UPDATE CASCADE 
   ) ENGINE = InnoDB;
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- MELAKUKAN UPDATE PADA KOLOM DARI TABLE
 
--- Menambahkan kolom baru pada table yang ditimpa / alter
-ALTER TABLE nama_table
-  ADD nama_kolom VARCHAR(10)
-
--- Menghapus suatu kolom pada table yang ditimpa / alter
-ALTER TABLE nama_table
-  DROP column nama_kolom
+-- Menghapus table hingga semua baris datanya bersihhh
+DROP TABLE nama_table;
 
 -- Merubah nama table
 RENAME TABLE nama_table_lama TO nama_table_baru;
 
--- Merubah object(kolom) perubahan ini tidak terbatas pada nama tapi bisa type data dari table yang di alter
-ALTER TABLE nama_table
-  CHANGE nama_kolom_lama nama_kolom_baru VARCHAR(100);
+-- Menghapus semua baris atau data yang ada di table (konsep dari TRUNCATE sebenarnya menghapus seluruh table dan membuatya lagi. Ini menyebabkan reset ulang) Untuk perintah turncate tidak akan dimasukan ke log sehingga perubahan dengan truncate(hapus) tidak akan bisa dikembalikan lagi. Namun bila ia meiliki reference yang diset RESTRICT tentu ini error
+TRUNCATE TABLE nama_table;
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- MELAKUKAN UPDATE PADA KOLOM
 
 -- Menambahkan PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
 ALTER TABLE nama_table
@@ -77,20 +85,32 @@ ALTER TABLE nama_table_mahasiswa)
   REFERENCES nama_table_yang_dirujuk(dosen) (nama_kolom_primary_key_table_itu_yang_dirujuk)
   ON DELETE RESTRICT ON UPDATE RESTRICT);
 
--- menghapus semua baris atau data yang ada di table (konsep dari TRUNCATE sebenarnya menghapus seluruh table dan membuatya lagi. Ini menyebabkan reset ulang) Untuk perintah turncate tidak akan dimasukan ke log sehingga perubahan dengan truncate(hapus) tidak akan bisa dikembalikan lagi. Namun bila ia meiliki reference yang diset RESTRICT tentu ini error
-TRUNCATE TABLE nama_table;
+-- Menambahkan kolom baru pada table yang ditimpa / alter
+ALTER TABLE nama_table
+  ADD COLUMN nama_kolom VARCHAR(10);
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- MELAKUKAN UPDATE PADA TABLE
+-- Menghapus suatu kolom pada table yang ditimpa / alter
+ALTER TABLE nama_table
+  DROP COLUMN nama_kolom;
 
---Membuat table atau mengcreate database baru
-CREATE DATABASE databasename;
+-- Merubah object(kolom) perubahan ini tidak terbatas pada nama tapi bisa juga type data di kolom dari table yang di alter
+ALTER TABLE nama_table
+  CHANGE nama_kolom_lama nama_kolom_baru VARCHAR(100);
 
---menghapus satu database dengan mengdrop / menjatuhkan:
-DROP DATABASE databasename;
+-- Menganti hanya type data nya saja di nama_kolom dan menaruh kolomnya setelah nama_kolom_3 sehingga nama_kolom berada di posisi4 pada table atau di paling atas
+ALTER TABLE nama_table
+  MODIFIY nama_kolom VARCHAR(200) AFTER nama_kolom3;
+ALTER TABLE nama_table
+  MODIFIY nama_kolom VARCHAR(200) FIRST;
 
--- Menghapus sebuah table
-DROP TABLE nama_table;
+-- Menambahkan aturan NOT NULL pada kolom
+ALTER TABLE nama_table
+  MODIFIY nama_kolom type_dataNya NOT NULL;
 
--- Menghapus sebuah database
-DROP DATABASE nama_database;
+-- Menambahkan colom di table dengan type data waktu / timestamp yang tidak boleh kosong dan default datanya adalah waktu saat baris data dibuat
+ALTER TABLE nama_table
+  ADD COLUMN nama_kolom_waktu TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+--
+
+
