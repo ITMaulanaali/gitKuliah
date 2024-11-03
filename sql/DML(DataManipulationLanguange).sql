@@ -27,15 +27,15 @@ INSERT INTO nama_table(
 -- Mengganti atau mengupdate semua data di semua baris yang memiliki nama_kolom_umur menjadi 20
 UPDATE nama_table SET nama_kolom_umur = 20;
 
--- Mengganti atau update hanya data di nama_kolom_umur menjadi 19 dan nama_kolom_nama menjadi ucik disemua baris yang memiliki nama_kolom_kehidupan = manusia(blablabla)
+-- Mengganti atau update hanya data di nama_kolom_umur menjadi 12 dan nama_kolom_nama menjadi ucik disemua baris yang memiliki nama_kolom_kehidupan = manusia diposisi manapun
 UPDATE nama_table SET
   nama_kolom_umur = 20,
   nama_kolom_nama = 'ucik'
   WHERE nama_kolom_kehidupan LIKE '%manusia%';
 
+-- Mengupdate data nama_kolom_umur yang sebelumnya 20 menadi ditambah 2 di semua baris yang memiliki nama_kolom_idnya = 4
 UPDATE nama_table SET 
-  nama_kolom_umur = 20,
-  nama_kolom_nama = 'ucik'
+  nama_kolom_umur = nama_kolom_umur + 2
   WHERE nama_kolom_id = 4; --hanya kolom dengan id=4
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
