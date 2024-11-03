@@ -21,6 +21,9 @@
 
 -- MENGAKSES DATABASE
 
+-- Melihat engines di sql
+SHOW ENGINES;
+
 -- Cek semua databasenya apakah ada databasename yang muncul dengan syntax:
 SHOW DATABASES;
 
@@ -36,7 +39,7 @@ SHOW TABLES;
 -- Melihat deskripsi table atau konfigurasi / spesifikasi / parameter apa saja di table setelah create table tersebut secara mendetail
 SHOW CREATE TABLE nama_table;
 
--- Menampilkan kolom dan type data apa saja yang ada di suatu table
+-- Menampilkan kolom dan type data apa saja yang ada di suatu table(struktur table)
 DESC nama_table;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -125,4 +128,16 @@ FROM nama_table
 GROUP BY nama_kolom_nama;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---
+--HAVING
+--Mirip seperti WHERE yang digunakan untuk pengelompokan kolom, HAVING digunakan untuk menggantikan WHERE sebagai pengelompokan data di kolom hasil dari GROUP BY
+
+--Pemahaman logikannya seperti ini. Sebelumnya dimulai dari penulisan WHERE dulu kemudian GROUP BY itu akan membuat semua baris data ditampilkan dengan ketentuan expression WHERE. Artinya ada data yang tidak ditampilkan dulu, kemudian data yang ditampilkan mulai di GROUP BY atau di kelompokan(ini akan menampilkan data setelah WHERE expression dan setelah di group by nilai di kolom x). Jika menggunakan HAVING, maka data bisa di GROUP BY dulu atau pisahkan per nilai kemudian di HAVING atau tampilkan mana saja hasil dari agregat yang ingin ditampilkan. Lalu kenapa pengelompokkan hasil dari agregat fungsi tidak bisa menggunakan WHERE saja? Karena suatu query yang memiliki kondisi agregat tidak bisa di process dengan WHERE jadi harus HAVING. Ini perlu pemahaman alur eksekusi query yang dijalankan
+
+
+-- Menampilkan jumlah baris data di kolom nama_kolom_nama dan nama_kolom_baru_dari_count_berisi_jumlah_baris_data yang dikategorikan berdasarkan nama_kolom_nama yang hanya menampilkan baris dengan nilai di nama_kolom_umur adlah 15 atau 20
+SELECT nama_kolom_nama, COUNT(*) AS nama_kolom_berisi_jumlah_baris_data
+FROM nama_table
+GROUP BY nama_kolom_nama
+HAVING nama_kolom_berisi_jumlah_baris_data BETWEEN 15 AND 20;
+
+-- 
