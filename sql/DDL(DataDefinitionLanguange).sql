@@ -5,6 +5,7 @@
 --ALTER
 
 --JENIS - JENIS CONSTRAINT
+  PRIMARY KEY
   FOREIGN KEY
   --Behavior atau prilaku atau aturan pada reference foreign key
   --CASCADE. Ini mengizinkan kolom fk di table. Untuk ikut termanage/ubah/update jika tabel REFERENCES di tabel lain(primary key) di hapus atau diubah.
@@ -13,10 +14,9 @@
   --RESTRICT. tidak Mengizinkan update/hapus nilai di kolomnreferensinya (kolom primary key di tabel lain yang dijadikan reference) jika masih ada atau ada referensi ke data di kolom tersebut
   --NO ACTION. 
   --Aturan dasar dalam membuat reference adalah type data harus benar-benar sama seperti unsigned pun harus sama perilakunya
-  PRIMARY KEY
-    
+  UNIQUE KEY
 
-  UNIQUE
+    
   
   --Tambahan perilaku setelah pengetikan type data
   NOT NULL --data di kolom tersebut tidak boleh kosong
@@ -59,6 +59,19 @@ CREATE TABLE nama_table2(
   CONSTRAINT fk_to_nama_table1 FOREIGN KEY(fk_nama_table1) REFERENCES nama_table(id) ON DELETE CASCADE ON UPDATE CASCADE 
   ) ENGINE = InnoDB;
 
+---------
+--Membuat constraint kolom yang uniq
+CREATE TABLE nama_table2(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(20) NOT NULL,
+  umur INT UNSIGNED,
+  golongan VARCHAR(2),
+  jurusan VARCHAR(10) NOT NULL,
+  alamat TEXT,
+  email VARCHAR(30),
+  UNIQUE KEY nama_constraint (nama_kolom_yang_dijadikan_unique_atau_email)
+  ) ENGINE = InnoDB;
+
 
 -- Menghapus table hingga semua baris datanya bersihhh
 DROP TABLE nama_table;
@@ -73,17 +86,35 @@ TRUNCATE TABLE nama_table;
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- MELAKUKAN UPDATE PADA KOLOM
 
--- Menambahkan PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
+-- Menambahkan CONSTRAINT PRIMARY KEY di suatu kolom pada table yang di ditimpa / alter
 ALTER TABLE nama_table
   ADD CONSTRAINT pk_kolom --untuk constraint opsional
   PRIMARY KEY (nama_kolom_yang_ditambahkan_primay_key); --bisa menambah primary key di multiple colom dengan , nama_kolom
 
--- Menambaha Foreign Key di kolon pada table yang di timpa / alter
+-- Menambahkan CONSTRAINT FOREIGN KEY di kolon pada table yang di timpa / alter
 ALTER TABLE nama_table_mahasiswa)
   ADD CONSTRAINT nama_fk_ke_rujukan(dosen)_dengan_constraint_ini_maka_relasi_namaKolom_foreignKey_yang_ada_di_mahasiswa_nilainya_harus_sama_atau_ada_di_kolom_rujukan(dosen)_tidak_boleh_beda(unik) --nama constaint opsional
   FOREIGN KEY (nama_kolom_yang_ingin_dibuat_fk_di_table_ini(mahasiswa))
   REFERENCES nama_table_yang_dirujuk(dosen) (nama_kolom_primary_key_table_itu_yang_dirujuk)
   ON DELETE RESTRICT ON UPDATE RESTRICT);
+
+-- Menambahkan CONSTRAINT UNIQUE KEY
+ALTER TABLE nama_table
+  ADD CONSTRAINT nama_constraint UNIQUE KEY (nama_kolom_yang_ingin_nilainya_dijadikan_unik);
+
+-- Menambahkan atau update CONSTRAINT CHECK CONSTRAINT untuk memastikan data itu adalah dengan perbandingan
+ALTER TABLE nama_table
+  ADD CONSTRAINT cek_nilai_diatas_10 CHECK (nama_kolom_yang_ingin_nilainya_diatas_10);
+
+-- Membuat suatu kolom menjadi index untuk mempercepat pencarian karena menggunakan algoritma B-TREE
+ALTER TABLE nama_table
+  ADD INDEX nama_indexsnya(nama_kolom_yang_dijadikan_berindex1, nama_kolom2, nama_kolom3); --atau buat satu kolom satu index dan ini lebih disarankan
+  ADD INDEX nama_index1(nama_kolom1);
+  ADD INDEX nama_index2(nama_kolom2);
+
+-- Menghapus hanya constraint nya saja pada suatu table
+ALTER TABLE nama_table
+  DROP CONSTRAINT nama_constraintnya;
 
 -- Menambahkan kolom baru pada table yang ditimpa / alter
 ALTER TABLE nama_table
