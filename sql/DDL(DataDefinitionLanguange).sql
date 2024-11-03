@@ -99,13 +99,13 @@ ALTER TABLE nama_table
 
 -- Menganti hanya type data nya saja di nama_kolom dan menaruh kolomnya setelah nama_kolom_3 sehingga nama_kolom berada di posisi4 pada table atau di paling atas
 ALTER TABLE nama_table
-  MODIFIY nama_kolom VARCHAR(200) AFTER nama_kolom3;
+  MODIFY nama_kolom ENUM('makanan', 'minuman') AFTER nama_kolom3;
 ALTER TABLE nama_table
-  MODIFIY nama_kolom VARCHAR(200) FIRST;
+  MODIFY nama_kolom VARCHAR(200) FIRST;
 
 -- Menambahkan aturan NOT NULL pada kolom
 ALTER TABLE nama_table
-  MODIFIY nama_kolom type_dataNya NOT NULL;
+  MODIFY nama_kolom type_dataNya NOT NULL;
 
 -- Menambahkan colom di table dengan type data waktu / timestamp yang tidak boleh kosong dan default datanya adalah waktu saat baris data dibuat
 ALTER TABLE nama_table
