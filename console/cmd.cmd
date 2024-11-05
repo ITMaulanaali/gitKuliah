@@ -47,7 +47,9 @@ winget install Microsoft.VisualStudioCode
 ::menginstal git
 winget install Git.Git
 
+::menginstall buildSystem minGW untuk compiler spesifik windows .exe
+winget install mingw-w64
+
 ::mendownload aplikasi winbox
 winget install MikroTik.Winbox
-
 
