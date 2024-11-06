@@ -114,6 +114,17 @@ SELECT * FROM nama_table WHERE nama_kolom_orang_pertama LIKE '%aku%';
 SELECT * FROM nama_table WHERE nama_kolom_orang_pertama NOT LIKE '%aku%';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- FULLTEXT mirip seperti LIKE untuk pencarian. FULLTEXT mendukung untuk pencarian yang berindex artinya hanya satu kolom yang dipilih maka kolom itu yang dicari datanya sedangkan LIKE dicari perbaris atau semua kolom karena tidak mendukung index
+SELECT * FROM nama_tabel WHERE MATCH(nama_kolom1,nama_kolom2)
+	AGAINST('Ayam' IN NATURAL LANGUAGE MODE); --akan menampilkan baris yang memiliki kata Ayam
+
+SELECT * FROM nama_tabel WHERE MATCH(nama_kolom1,nama_kolom2)
+	AGAINST('+Ayam -bakso' IN BOOLEAN MODE); --menampilkan baris yang memiliki kata ayam namun bila ada kata bakso juga di kolom itu maka barisnya tidak akan di tampilkan
+
+SELECT * FROM nama_tabel WHERE MATCH(nama_kolom1,nama_kolom2)
+	AGAINST('bakso' WITH QUERY EXPANSION); --menampilkan baris yang memilii kata bakso dan semua kata yang memiliki kata yang berhubngan atau dekat dengan kata bakso di valuenya
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --BETWEEN dan ALIASES OPERATOR
 
 -- Menampilkan semua baris data di kolom dengan nilai nama_kolom_umur antara 17 dan 20;
