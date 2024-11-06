@@ -188,7 +188,11 @@ HAVING nama_kolom_berisi_jumlah_baris_data BETWEEN 15 AND 20;
 -- JOIN
 
 --INNER JOIN hanya mengambil atau menampilkan data yang berelasi antar tabel. Jika data tidak berelasi atau nilai id berbeda dari referencenya maka tidak ditampilkan. By default saat membuat JOIN adalah inner join
-SELECT * FROM nama_tabel 
-	INNER JOIN nama_tabel_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
-
+--Singgle JOIN
+SELECT * FROM nama_table 
+	INNER JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
+--MULTIPLE JOIN
+SELECT nama_table1.id, nama_table2,id nama_table3.id FROM nama_tabel1
+	INNER JOIN nama_tabel2 ON(nama_table1.id = nama_table2.id)
+	INNER JOIN nama_table3 ON(nama_table1.id = nama_table3.id);
 
