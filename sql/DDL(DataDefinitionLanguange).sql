@@ -100,7 +100,7 @@ ALTER TABLE nama_table_mahasiswa)
 
 -- Menambahkan CONSTRAINT UNIQUE KEY
 ALTER TABLE nama_table
-  ADD CONSTRAINT nama_constraint UNIQUE KEY (nama_kolom_yang_ingin_nilainya_dijadikan_unik);
+  ADD CONSTRAINT nama_constraint UNIQUE (nama_kolom_yang_ingin_nilainya_dijadikan_unik);
 
 -- Menambahkan atau update CONSTRAINT CHECK CONSTRAINT untuk memastikan data itu adalah dengan perbandingan
 ALTER TABLE nama_table
