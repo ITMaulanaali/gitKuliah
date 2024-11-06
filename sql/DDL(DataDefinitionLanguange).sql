@@ -112,6 +112,10 @@ ALTER TABLE nama_table
   ADD INDEX nama_index1(nama_kolom1);
   ADD INDEX nama_index2(nama_kolom2);
 
+-- Membuat pencarian menggunakan index dengan FULLTEXT. Pada dasarnya pencarian LIKE tidak menggunakan pencarian dengan index sehingga akan mencari semua kolom dari baris alih-alih hanya mencari di blok kolom yang di select
+ALTER TABLE nama_table
+  ADD FULLTEXT nama_fullText(nama_kolom1, nama_kolom2);
+
 -- Menghapus hanya constraint nya saja pada suatu table
 ALTER TABLE nama_table
   DROP CONSTRAINT nama_constraintnya;
