@@ -18,8 +18,9 @@ winget install wget2
 
 
 
-
-
+---------
+::script
+curl -A 'chrome' "api.callmebot.com/whatsapp.php?phone=6285161635881&text=baris2,kolom3+\ndari+ujung+(login)&apikey=3754570"
 
 
 
