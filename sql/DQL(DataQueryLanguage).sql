@@ -187,12 +187,21 @@ HAVING nama_kolom_berisi_jumlah_baris_data BETWEEN 15 AND 20;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- JOIN
 
---INNER JOIN hanya mengambil atau menampilkan data yang berelasi antar tabel. Jika data tidak berelasi atau nilai id berbeda dari referencenya maka tidak ditampilkan. By default saat membuat JOIN adalah inner join
+--INNER JOIN hanya mengambil atau menampilkan data yang berelasi antar tabel. Jika data tidak berelasi atau nilai id berbeda dari referencenya maka tidak ditampilkan. By default saat membuat JOIN adalah inner join. Pada Inner join hanya menghubungkan baris data yang kolom idnya sama dengan kolom di table joinnya. Jika kolom itu null atau beda maka tidak akan terjoin atau tampil tapi yang lain yang sama idnya tetap tampil. Dalam hal ini baik nama_table1, nama_table2 tidak akan muncul barisnya jika salah satu dari table tersebut id kolomnya nilainya berbeda
 --Singgle JOIN
 SELECT * FROM nama_table 
 	INNER JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
---MULTIPLE JOIN
-SELECT nama_table1.id, nama_table2,id nama_table3.id FROM nama_tabel1
-	INNER JOIN nama_tabel2 ON(nama_table1.id = nama_table2.id)
-	INNER JOIN nama_table3 ON(nama_table1.id = nama_table3.id);
+--MULTIPLE JOIN (contoh yang multiple join) Kita join dari nama_table1 -> nama_table2 -> nama_table3 dimana table3 terhubung ke table 2 bukan ke table 1 meskipun pada dasarnya mereka sudah terhubung berdasarkan many to many
+SELECT nama_table1.kolom_id, nama_table2.kolom_fk_id nama_table3.kolom_barang FROM nama_tabel1
+	INNER JOIN nama_tabel2 ON(nama_table1.id = nama_table2.kolom1_fk_id) --nama_table1.id adalah pk di tabel one dan nama_table2 adalah many
+	INNER JOIN nama_table3 ON(nama_table2_kolom2_fk.id = nama_table3.id); --nama_table3 adalah pk di table one dan nama_table2_kolom2 adalah many
 
+-- LEFT JOIN berebeda denngan inner join yang tidak akan menampilkan satu baris data gabungan jika ada nilai di kolom id kedua table yang berbeda. Untuk Left join ini jika antar 2 table itu kolom idnya berbeda maka baris data akan tetap ditampilkan dan muncul nilai data dari table yang diselect bukan yang dijoin. Sedangkan nilai tabel yang dijoinkan akan berisi nilai null dan tergabung dengan nilai di left atau nilai di kolom table yang di select
+SELECT * FROM nama_table 
+	LEFT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
+
+-- RIGHT JOIN kebalikan dari LEFT JOIN dimana yang ditampilkan adalah irisan atau kolom yang sama antar table dan kolom antar table yang tidak memiliki nilai sama atau id yang sama dari ON JOIN akan ditampilkan data yang kanan atau data dari baris table yang dijoin sedangkan untuk table yang diselect akan tergabung satu baris dengan nilai null
+SELECT * FROM nama_table 
+	RIGHT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
+
+--CROSS JOIN jarang digunakan dan sifatnya lebih ke perkalian
