@@ -205,3 +205,12 @@ SELECT * FROM nama_table
 	RIGHT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
 
 --CROSS JOIN jarang digunakan dan sifatnya lebih ke perkalian
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- SUBQUERY artinya hasil dari query yang ada di where digunakan untuk query utama diluar where atau yang menggunakan where. Bisa uga untuk hasil dari Suqquery ke FROM
+SELECT * FROM nama_table1
+	WHERE nama_kolom_table1 > (SELECT AVG(nama_kolom_umur) FROM nama_table); --hasil dari subquery adalah satu kolom dengan nilai rata-rata yang dipakai untuk menentukan Where nama_kolom_table1 > nilai rata-rata
+SELECT MAX(beri_nama_kolom.nama_kolom)
+	FROM(SELECT nama_kolomnya FROM nama_table_lain INNER JOIN(nama_table_lain.kolomId = nama_table_lain1.id_table_lain)) as beri_nama_kolom; --hasilnya adalah menampilkan semua nilai di kolom beri_nama_kolom. Nah karena kolom beri_nama_kolom ditaruh di FROM maka hasil di subquery adalah nama kolomnya untuk digunakan FROM
+
+
