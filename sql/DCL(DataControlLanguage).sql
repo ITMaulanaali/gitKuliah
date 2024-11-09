@@ -33,6 +33,11 @@ SET PASSWORD FOR 'username'@'localhost' = 'akses123';
 SET PASSWORD FOR 'username'@'%' = 'akseskemanapun';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Menampilkan user apa saja yang ada di database
+--User juga bisa dilihat pada kolom USER_ATTRIBUTS di table Information_Scheme;
+SELECT User, Host FROM mysql.user;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Memberikan hak akses SELECT, INSERT, UPDATE dan DELETE pada khusus satu database untuk semua table didalam database
 GRANT SELECT INSERT UPDATE DELETE ON nama_database.* TO 'username'@'localhost';
 --Memberikan hak akses SELECT, INSERT, UPDATE dan DELETE pada khusus satu database untuk satu table didalam database
@@ -46,5 +51,5 @@ REVOKE SELECT ON nama_database.nama_table FROM 'username'@'privilage_ipnya';
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Melihat hak akses yang sudah atau diberikan ke user
-SHOW GRANST FOR 'username'@'localhost'
-SHOW GRANST FOR 'username'@'%'
+SHOW GRANTS FOR 'username'@'localhost'
+SHOW GRANTS FOR 'username'@'%'
