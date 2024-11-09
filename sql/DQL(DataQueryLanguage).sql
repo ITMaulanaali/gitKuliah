@@ -213,4 +213,25 @@ SELECT * FROM nama_table1
 SELECT MAX(beri_nama_kolom.nama_kolom)
 	FROM(SELECT nama_kolomnya FROM nama_table_lain INNER JOIN(nama_table_lain.kolomId = nama_table_lain1.id_table_lain)) as beri_nama_kolom; --hasilnya adalah menampilkan semua nilai di kolom beri_nama_kolom. Nah karena kolom beri_nama_kolom ditaruh di FROM maka hasil di subquery adalah nama kolomnya untuk digunakan FROM
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- UNION di c++ berarti satu memory digunakan type data(bentuknya berdasarkan bit) Namun di query hampir sama bahwa menggabungkan dua buah select dimana hasilnya jika nilai pada satu kolom ada yang sama akan dimunculkan hanya 1 karena dihapus. Mirip seperti group by tapi ini lebih ke menggabungkan nilai antar 2 kolom dengan nilai yang tidak duplikat
+SELECT DISTINCT nama_kolom FROM nama_table1
+UNION
+SELECT DISTINCT nama_kolom FROM nama_table2;
 
+-- UNION ALL sama melakukan penggabungan 2 query dimana semua nilai di kolomnya tidak akan di hapus atau duplikat
+SELECT un.nama_kolom, COUNT(un.nama_kolom) FROM
+	(SELECT nama_kolom FROM nama_table1 UNION ALL SELECT nama_kolom FROM nama_table2) AS un --menampilkan semua nilai duplikat satu satu
+	GROup BY un.nama_kolom;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--SET OPERATOR	
+
+-- INTERSECT OPERATOR adalah menampilkan hanya satu data yang sama antar 2 kolom baik dari table berbeda ataupun sama. Sayangnya tidak ada operator INTERSECT di MYSQL sehingga bisa buat sendri
+SELECT DISTINCT nama_table.nama_kolom FROM nama_table
+	WHERE nama_kolom IN(SELECT DISTINCT nama_kolom FROM nama_table); --Pelajari ini seperti hasil banyaknya nilai perkolom itu diberikan , dan dicek or operator. Hasil OR yang sama dengan nama_kolom akan ditampilkan nama_kolom dari nama_table. Penggunaan select distic untuk hanya menghpaus nilai atau nama duplikat
+--bisa juga menngunakan inner join, cari tahu sendiri
+
+--MINUS operator nilai di table1 dihapus oleh nilai di table2. Pelajari lagi ini
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
