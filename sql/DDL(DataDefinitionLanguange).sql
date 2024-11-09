@@ -105,6 +105,8 @@ ALTER TABLE nama_table
 -- Menambahkan atau update CONSTRAINT CHECK CONSTRAINT untuk memastikan data itu adalah dengan perbandingan
 ALTER TABLE nama_table
   ADD CONSTRAINT cek_nilai_diatas_10 CHECK (nama_kolom_yang_ingin_nilainya_diatas_10);
+ALTER TABLE nama_table
+  ADD CHECK(nama_kolom_yang_dicek_nilainya_harus_diatas_10); --tanpa menuliskan constraint maka nama constraint akan default
 
 -- Membuat suatu kolom menjadi index untuk mempercepat pencarian karena menggunakan algoritma B-TREE
 ALTER TABLE nama_table
