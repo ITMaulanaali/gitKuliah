@@ -90,8 +90,8 @@ SELECT * FROM nama_table WHERE nama_kolom_jenis_makanan NOT IN ('tahu','tempe','
 --LIMIT OPERATOR
 
 -- Menampilkan tidak semua baris data di semua kolom atau ada limitasi banyaknya baris yang ditampilkan dan pembatasan dimulai dari baris ke berapa
-SELECT * FROM nama_table WHERE nama_kolom = 12 ORDER BY nama_kolom ASC LIMIT 2; --memunculkan hanya 2 baris dimulai dari baris yang memiliki kolom nama_kolom dengan nilai dari 1 - 9
-SELECT * FROM nama_table WHERE nama_kolom = 12 ORDER BY nama_kolom ASC LIMIT 5,2; --memunculkan hanya 2 baris dimulai dari baris ke 5 dari nama_kolom 1-9 sehingga yang muncul baris 6 dan 7
+SELECT * FROM nama_table WHERE nama_kolom = 12 LIMIT 2; --memunculkan hanya 2 baris dimulai dari baris yang memiliki kolom nama_kolom dengan nilai dari 1 - 9
+SELECT * FROM nama_table WHERE nama_kolom = 12 LIMIT 5,2; --memunculkan hanya 2 baris dimulai dari baris ke 5 dari nama_kolom 1-9 sehingga yang muncul baris 6 dan 7
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --SELECT DISTINCT
@@ -104,7 +104,7 @@ SELECT DISTINCT * FROM nama_table WHERE nama_kolom_umur = 15;
 SELECT DISTINCT nama_kolom_id FROM nama_table WHERE nama_kolom_umur = 15;
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- ORDER BY dan LIKE OPERATOR
+-- ORDER BY, ORDER BY CASE, dan LIKE OPERATOR
 
 -- Menampilkan semua baris data disemua kolom dimana hanya menampilakan data di baris yang memiliki kolom nama_kolom_umur bernilai >=17 dan nama_kolom_umur ditampilkan secara urut dari 1 - 17 serta memiliki kolom nama_kolom_nama dan diurutkan dari z - 1
 SELECT * FROM nama_table WHERE nama_kolom_umur >=17 ORDER BY nama_kolom_umur ASC, nama_kolom_nama DESC;
@@ -112,6 +112,12 @@ SELECT * FROM nama_table WHERE nama_kolom_umur >=17 ORDER BY nama_kolom_umur ASC
 -- Menampilkan semua baris data di kolom dimana baris tersebut memiliki kolom nama_kolom_orang_pertama dengan nilai yang memiliki kata 'aku' atau kebalikannya
 SELECT * FROM nama_table WHERE nama_kolom_orang_pertama LIKE '%aku%';
 SELECT * FROM nama_table WHERE nama_kolom_orang_pertama NOT LIKE '%aku%';
+
+-- Menampilkan beberapa aturan pada nilai dimana jika nilai a didepan taruh di urutan 1 jika q% taruh di urutan 2 jika salah semua atau selain itu berikan mulai urutan ke 3
+SELECT * FROM nama_table ORDER BY CASE 
+	WHEN nama_kolom LIKE 'a%' THEN 1 
+	WHEN nama_kolom LIKE 'q%' THEN 2 
+	ELSE 3 END, nim;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- FULLTEXT mirip seperti LIKE untuk pencarian. FULLTEXT mendukung untuk pencarian yang berindex artinya hanya satu kolom yang dipilih maka kolom itu yang dicari datanya sedangkan LIKE dicari perbaris atau semua kolom karena tidak mendukung index
