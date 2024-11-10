@@ -133,7 +133,7 @@ SELECT * FROM nama_tabel WHERE MATCH(nama_kolom1,nama_kolom2)
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --BETWEEN dan ALIASES OPERATOR
 
--- Menampilkan semua baris data di kolom dengan nilai nama_kolom_umur antara 17 dan 20;
+-- Menampilkan semua baris data di kolom dengan nilai nama_kolom_umur antara /dari 17 sampai 20;
 SELECT * FROM nama_table WHERE nama_kolom_umur BETWEEN 17 AND 20;
 
 -- Menampilkan semua baris data di kolom nama_kolom1 dan nama_kolom2 dengan nama alias
