@@ -38,6 +38,15 @@ UPDATE nama_table SET
   nama_kolom_umur = nama_kolom_umur + 2
   WHERE nama_kolom_id = 4; --hanya kolom dengan id=4
 
+-- Melakukan update ke banyak baris data di kolom yang sama yang memiliki nilai berbeda, seperti membuat where yang berulang untuk nama_kolom_murid. Sehingga ini seperti membuat banyak where dalam sekali eksesku/query
+UPDATE nama_table SET 
+  nama_kolom_kode = case
+  when nama_kolom_murid = 'zoro' THEN '0160436012'
+  when nama_kolom_murid = 'lana' THEN '0260432002'
+  when nama_kolom_murid = 'monkey d luffy' then '0260432002'
+  end
+  where nama_kolom_murid IN('zoro','lana','monkey d luffy'); --tanpa ini juga bisa. Tapi case akan dicek satu persatu when/where nya. Jika sudah habis maka nama_kolom_kode = tidak ada lagi isinya(then) sehingga data lainnya akan tereksekusi null
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --DELETE
 
