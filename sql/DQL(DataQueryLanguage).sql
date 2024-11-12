@@ -213,6 +213,12 @@ SELECT * FROM nama_table
 --CROSS JOIN jarang digunakan dan sifatnya lebih ke perkalian
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- JOIN dengan where. Ini disebut juga implicit join atau comma join. Karena sebenarnya kita menampilkan data from 2 table nah kemudian hasil penggambungan table atau join kita pisahkan mana yang mau ditampilkan saja(yaitu tampilkan hanya baris yang nilai id ditable1 = id ditable2)
+
+SELECT * FROM nama_table1, nama_table2
+	WHERE nama_table1 = nama_table2;
+-- Penggunaan where join sebenarnya tidak disarankan karena pembacaannya yang susah dimengerti atau best practicenya jika sudah melakukan join pada banyak table lebih baik menggunakan eskplisit seperti inner join dsb
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- SUBQUERY artinya hasil dari query yang ada di where digunakan untuk query utama diluar where atau yang menggunakan where. Bisa uga untuk hasil dari Suqquery ke FROM
 SELECT * FROM nama_table1
 	WHERE nama_kolom_table1 > (SELECT AVG(nama_kolom_umur) FROM nama_table); --hasil dari subquery adalah satu kolom dengan nilai rata-rata yang dipakai untuk menentukan Where nama_kolom_table1 > nilai rata-rata
