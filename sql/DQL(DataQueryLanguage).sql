@@ -199,8 +199,9 @@ SELECT * FROM nama_table
 	INNER JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
 --MULTIPLE JOIN (contoh yang multiple join) Kita join dari nama_table1 -> nama_table2 -> nama_table3 dimana table3 terhubung ke table 2 bukan ke table 1 meskipun pada dasarnya mereka sudah terhubung berdasarkan many to many
 SELECT nama_table1.kolom_id, nama_table2.kolom_fk_id nama_table3.kolom_barang FROM nama_tabel1
-	INNER JOIN nama_tabel2 ON(nama_table1.id = nama_table2.kolom1_fk_id) --nama_table1.id adalah pk di tabel one dan nama_table2 adalah many
-	INNER JOIN nama_table3 ON(nama_table2_kolom2_fk.id = nama_table3.id); --nama_table3 adalah pk di table one dan nama_table2_kolom2 adalah many
+	INNER JOIN nama_tabel2 ON(nama_table1.id(pk) = nama_table2.kolom1_fk_id(fk)) --nama_table1.id adalah pk di tabel one dan nama_table2 adalah many
+	INNER JOIN nama_table3 ON(nama_table2_kolom2.id(pk) = nama_table3.id(fk)); --nama_table3 adalah pk di table one dan nama_table2_kolom2 adalah many
+--Proses join dengan aturan kolom id ini disesuaikan dengan bagaimana relasinya ke table lain dan aturan kolom mana sebagai peghubung datanya.
 
 -- LEFT JOIN berebeda denngan inner join yang tidak akan menampilkan satu baris data gabungan jika ada nilai di kolom id kedua table yang berbeda. Untuk Left join ini jika antar 2 table itu kolom idnya berbeda maka baris data akan tetap ditampilkan dan muncul nilai data dari table yang diselect bukan yang dijoin. Sedangkan nilai tabel yang dijoinkan akan berisi nilai null dan tergabung dengan nilai di left atau nilai di kolom table yang di select
 SELECT * FROM nama_table 
@@ -216,8 +217,12 @@ SELECT * FROM nama_table
 -- JOIN dengan where. Ini disebut juga implicit join atau comma join. Karena sebenarnya kita menampilkan data from 2 table nah kemudian hasil penggambungan table atau join kita pisahkan mana yang mau ditampilkan saja(yaitu tampilkan hanya baris yang nilai id ditable1 = id ditable2)
 
 SELECT * FROM nama_table1, nama_table2
-	WHERE nama_table1 = nama_table2;
+	WHERE nama_table1.id = nama_table2.id; --id antar table harus sama(pk - fk)
 -- Penggunaan where join sebenarnya tidak disarankan karena pembacaannya yang susah dimengerti atau best practicenya jika sudah melakukan join pada banyak table lebih baik menggunakan eskplisit seperti inner join dsb
+
+--JOIN dengan 3 table
+SELECT * FROM nama_table1, nama_table2, nama_table3
+	WHERE nama_table1.id = nama_table2.id AND nama_table2.id = nama_table3.id;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- SUBQUERY artinya hasil dari query yang ada di where digunakan untuk query utama diluar where atau yang menggunakan where. Bisa uga untuk hasil dari Suqquery ke FROM
 SELECT * FROM nama_table1
