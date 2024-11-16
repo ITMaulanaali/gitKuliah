@@ -72,6 +72,11 @@ CREATE TABLE nama_table2(
   UNIQUE KEY nama_constraint (nama_kolom_yang_dijadikan_unique_atau_email)
   ) ENGINE = InnoDB;
 
+---------------------
+CREATE VIEW nama_view AS
+  --query dql yang ingin ditampilkan kolom atau nilai tertentu atau pintasan dari table lain ke table view
+  SELECT hanya_nama_kolom1, just_nama_kolom2 FROM nama_table
+  WHERE --kondisi yang diinginkan pada tampilan data di table view;
 
 -- Menghapus table hingga semua baris datanya bersihhh
 DROP TABLE nama_table;
