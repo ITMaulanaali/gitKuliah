@@ -1,6 +1,6 @@
 
 class ikan{
-    String nama; //tidak boleh di private karena ketika di extends akan tidak terbaca di class lain
+    String nama = "dari super class ikan"; //tidak boleh di private karena ketika di extends akan tidak terbaca di class lain
     
     void getName(){
         System.out.println("apen-apen nilai nama");
@@ -9,22 +9,23 @@ class ikan{
 }
 
 class ikanKeDua extends ikan{
-    //kita tidak bisa melakukan inisisalisasi nama di superclass(error) dengan this.nama. Itu sama saja seperti membuat variable string nama di class ini(membuat lagi)
-    private String namaDariIkanKeDua;
-    
+    //mengoverride variable nama di superclass
+    private String nama;
+//    private String namaDariIkanKeDua;
     
     public void setName(String i){
-        this.nama = i;
+        this.nama = i; //ini akan mengambil nilai di ikanKeDua.nama. namun jika ikanKeDua.name tidak ada, this.name akan mengambil dari superclassnya. Nahh untuk bisa mengambil name di superclass tanpa menghilangkan ikanKeDua.nama bisa menggunakan super.nama
     }
     
-    public void setName(String namaAwal, String namaAkhir){ //ini disebut overloading atau nama methodnya sama dengan parameter yang berbeda
-        this.nama = namaAwal + namaAkhir;
-        
-    }
+//    public void setName(String namaAwal, String namaAkhir){ //ini disebut overloading atau nama methodnya sama dengan parameter yang berbeda
+//        this.nama = namaAwal + namaAkhir;
+//        
+//    }
      
     public void getName(){ //ini disebut overriding dari kategori extends yaitu menimpa atau mengganti method getName yang sudah ada(diwariskan oleh ikan) dengan getName buatan sendiri
         System.out.println("nilai ikanKedua");
         System.out.println(this.nama);
+        System.out.println(super.nama); //langsung mengambil nilai variable name di superclassnya(ikan.nama)
         
     }
 }
