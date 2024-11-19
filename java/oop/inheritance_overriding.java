@@ -4,7 +4,7 @@ class ikan{
     String nama = "dari super class ikan";
     
     void getName(){
-        System.out.println("Ini getName di class ikan |" + nama);
+        System.out.println("Ini getName di class ikan |" + this.nama);
     }
     
 }
@@ -15,7 +15,7 @@ class ikanKeDua extends ikan{
     
     //mengoverride methode yang dimiliki superclass
     void getName(){
-        System.out.println("ini getName di class ikanKeDua |" + nama);
+        System.out.println("ini getName di class ikanKeDua |" + this.nama);
     }
 }
 
