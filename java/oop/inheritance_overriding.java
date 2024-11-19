@@ -14,6 +14,7 @@ class ikanKeDua extends ikan{
     String nama = "dari subclass ikanKeDua";
     
     //mengoverride methode yang dimiliki superclass
+    @Override
     void getName(){
         System.out.println("ini getName di class ikanKeDua |" + this.nama);
     }
