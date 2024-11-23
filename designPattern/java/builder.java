@@ -1,3 +1,5 @@
+//Builder pattern adalah pola desain program yang tujuannya untuk memisahkan/mempermudah/memfleksibelkan proses pembuatan object yang kompleks di class lain
+//Contoh penerapan dibawah ini kita membuat object dengan constructor yang panjang, nah olehh karena kompleksnya argument dan menyusahkan maka kita buat lebih flexibel dengan menggunakan pola desaign builder pattern yaitu class objectBuilder
 
 public class objectBuilder {
     private String ikan1;
