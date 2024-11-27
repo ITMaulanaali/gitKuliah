@@ -74,16 +74,16 @@ YEAR
 --BIT ukuran 7 bit
 BIT
 
---TINYBLOB ukuran 1 byte atau 8bit
+--TINYBLOB ukuran 255 byte atau 1kB
 TINYBLOB
 
---BLOB ukuran 2 byte atau 16bit
+--BLOB ukuran 65.536 byte atau 64 kB
 BLOB
 
---MEDIUMBLOB ukuran 3 byte atau 24bit
+--MEDIUMBLOB ukuran 16 mB
 MEDIUMBLOB
 
---LONGBLOB ukuran 4 byte atau 32bit
+--LONGBLOB ukuran 4 gB
 LONGBLOB
 
 -------------------------------------------------------------
