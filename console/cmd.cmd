@@ -66,3 +66,9 @@ winget install mingw-w64
 ::mendownload aplikasi winbox
 winget install MikroTik.Winbox
 
+::menginstall Node.js dan untuk LTS(long term support)
+winget install OpenJS.NodeJS,
+winget install OpenJS.NodeJS.LTS
+
+::menginstal node red dengan npm dan memberikan flex -g untuk dapat diakses secara global
+npm install -g node-red
