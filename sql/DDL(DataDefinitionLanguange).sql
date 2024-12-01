@@ -153,6 +153,8 @@ ALTER TABLE nama_table
 ALTER TABLE nama_table
   ADD COLUMN nama_kolom_waktu TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
 
---
+-- Menambahkan auto mengisi data tanggal dan waktu (harus tipe data datetime/timestamp)
+ALTER TABLE nama_table
+  ADD COLUMN nama_kolom_DATETIME DEFAULT CURRENT_TIMESTAMP;
 
 
