@@ -30,4 +30,24 @@ rm -r
 #mencari manual dari bin atau tool
 man rm
 
+#menampilkan jenis dari file atau direktori
+file namaFileAtauDirektori
+
+#menampilkan jenis file, kapan diakses, kapan modifikasi dan lainya dalam bentuk static yang lebih lengkap
+stat namaFileAtauDirektori
+
+#menampilkan isi file
+cat namaFile
+
+#menampilkan data yang panjang bisa dengan mencari dengan klik enter dan mengurut dari bawah ke atas atau sebaliknya
+less dan more
+
+#mengambil data file dari 10 baris teratsa
+head namaFile
+
+#mengambil data file dari 10 baris terbawa
+tail
+
+#mengambil data file dari 20 baris terbawa
+tail -n 20
 
