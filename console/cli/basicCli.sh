@@ -51,3 +51,7 @@ tail
 #mengambil data file dari 20 baris terbawa
 tail -n 20
 
+#mengoveride data hasil dari file lain di override / timpa ke file yang lain
+cat namaFile > namaFileBaru
+#menambah data dari file lain ke file baru dan setiap ada data baru akan tetap ditambah(append dan tidak di override)
+cat namaFile >> namaFileBaru
