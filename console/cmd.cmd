@@ -13,32 +13,6 @@ winget list | findstr "Desktop"
 ::menginstall wget / wget2 untuk method get(bisa Download) sedangkan curl lebih kepada pengambilan html
 winget install wget2
 
-
-
-
-
-
----------
-::script
-
-@echo off
-:check
-ping -n 1 google.com >nul 2>&1
-if errorlevel 1 (
-    echo Tidak ada koneksi internet
-    timeout /t 120 >nul
-    ::goto check
-) else (
-    curl -A 'chrome' "api.callmebot.com/whatsapp.php?phone=6285161635881&text=baris2,kolom3+\ndari+ujung+(login)&apikey=3754570"
-	exit
-	  ::C:/Users/kampu/nhm_windows_3.1.1.2.exe
-)
-
-
-
-
-
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 :: INSTALLASI PACKAGE
 
