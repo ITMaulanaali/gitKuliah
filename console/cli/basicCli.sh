@@ -55,3 +55,10 @@ tail -n 20
 cat namaFile > namaFileBaru
 #menambah data dari file lain ke file baru dan setiap ada data baru akan tetap ditambah(append dan tidak di override)
 cat namaFile >> namaFileBaru
+
+#macam-macam editor
+nano
+vim
+gedit
+
+
