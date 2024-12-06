@@ -13,6 +13,15 @@ apt-get update
 #melakukan upgrade package yang sudah terinstall dengan package baru yang didapat dari repository
 apt-get upgrade
 
+#melakukan cek spesifikasi package
+apt show namaPackage
+
+#mencari package yang berhubungan
+apt search namaPackage
+
+#menampilkan history dari semua command yang sudah di ketikkan
+history
+
 #membuat file baru
 touch namaFile.format
 
@@ -20,12 +29,12 @@ touch namaFile.format
 nano namaFile.format
 
 #berindah folder
-cd
+cd lokasi/Folder
 
 #menghapus file
-rm
+rm namaFile
 #menghapus folder beserta file didalamnya
-rm -r
+rm -r namaFolder
 
 #mencari manual dari bin atau tool
 man rm
@@ -61,4 +70,7 @@ nano
 vim
 gedit
 
-
+#membuat file archive dari beberapa file ke format dengan format tar. Untuk compresi bisa menggunakan tar.gz
+tar -cvf namaNewFileArchive.tar namaFile1 namaFile2 namaFile3
+#extrak file tar
+tar -xf namaNewFileArchive.tar
