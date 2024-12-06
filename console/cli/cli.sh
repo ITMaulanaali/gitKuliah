@@ -5,4 +5,9 @@ chmod+x nama_file
 which mysql
 
 #menginstall mingw untuk compilasi machine code windows khususnya c++
-sudo apt install mingw-w64
+apt install mingw-w64
+
+#menginstall dirsearch untuk cek source file web path
+apt install dirsearch
+
+#menginstall ettercap tools MITM
