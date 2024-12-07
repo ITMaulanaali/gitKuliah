@@ -74,3 +74,10 @@ gedit
 tar -cvf namaNewFileArchive.tar namaFile1 namaFile2 namaFile3
 #extrak file tar
 tar -xf namaNewFileArchive.tar
+
+#melakukan cek system aplikasi atau daemon yang berjalan
+systemctl start namaAplikasi
+systemctl stop namaAplikasi
+systemctl enable namaAplikasi
+systemctl disable namaAplikasi
+systemctl status namaAplikasi
