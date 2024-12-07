@@ -7,6 +7,8 @@ which mysql
 #menginstall mingw untuk compilasi machine code windows khususnya c++
 apt install mingw-w64
 
+#mengintal rar untuk esktrak windows
+apt install unrar
 #menginstall dirsearch untuk cek source file web path
 apt install dirsearch
 
