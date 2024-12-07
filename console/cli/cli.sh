@@ -9,7 +9,11 @@ apt install mingw-w64
 
 #mengintal rar untuk esktrak windows
 apt install unrar
+
 #menginstall dirsearch untuk cek source file web path
 apt install dirsearch
 
 #menginstall ettercap tools MITM
+
+#menginstall ssh service(daemon)
+apt install openssh_server
