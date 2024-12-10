@@ -22,3 +22,7 @@ apt install dirsearch
 
 #menginstall ssh service(daemon)
 apt install openssh_server
+
+#menginstall broker mosquitto dan mosquitto clients
+apt install mosquitto
+apt install mosquitto-clients
