@@ -205,12 +205,15 @@ SELECT nama_table1.kolom_id, nama_table2.kolom_fk_id nama_table3.kolom_barang FR
 
 -- LEFT JOIN berebeda denngan inner join yang tidak akan menampilkan satu baris data gabungan jika ada nilai di kolom id kedua table yang berbeda. Untuk Left join ini jika antar 2 table itu kolom idnya berbeda maka baris data akan tetap ditampilkan dan muncul nilai data dari table yang diselect bukan yang dijoin. Sedangkan nilai tabel yang dijoinkan akan berisi nilai null dan tergabung dengan nilai di left atau nilai di kolom table yang di select
 SELECT * FROM nama_table 
-	LEFT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
+	LEFT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk));
 
 -- RIGHT JOIN kebalikan dari LEFT JOIN dimana yang ditampilkan adalah irisan atau kolom yang sama antar table dan kolom antar table yang tidak memiliki nilai sama atau id yang sama dari ON JOIN akan ditampilkan data yang kanan atau data dari baris table yang dijoin sedangkan untuk table yang diselect akan tergabung satu baris dengan nilai null
 SELECT * FROM nama_table 
-	RIGHT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk);
+	RIGHT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk));
 
+-- FULL OUTER JOIN
+SELECT * FROM nama_table
+	FULL OUTER JOIN nama_table_dijoin ON (nama_table_dijoin.nama_kolom(fk) = nama_table.nama_kolom(pk));
 --CROSS JOIN jarang digunakan dan sifatnya lebih ke perkalian
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
