@@ -211,9 +211,6 @@ SELECT * FROM nama_table
 SELECT * FROM nama_table 
 	RIGHT JOIN nama_table_dijoin ON (nama_tabel_dijoin.nama_kolom_yang_sama_atau_idReference(fk) = nama_tabel.nama_kolom_yang_sama_dengan_table_yang_ngejoin(pk));
 
--- FULL OUTER JOIN
-SELECT * FROM nama_table
-	FULL OUTER JOIN nama_table_dijoin ON (nama_table_dijoin.nama_kolom(fk) = nama_table.nama_kolom(pk));
 --CROSS JOIN jarang digunakan dan sifatnya lebih ke perkalian
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
